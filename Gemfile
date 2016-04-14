@@ -5,7 +5,7 @@ gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
-gem 'turbolinks'
+gem 'turbolinks', git: 'https://www.github.com/rails/turbolinks'
 gem 'jbuilder'
 group :development, :test do
   gem 'byebug'
@@ -19,3 +19,7 @@ group :development do
   gem 'rails_layout'
 end
 
+gem 'acts-as-taggable-on'
+gem 'faker'
+gem 'dalli'
+gem 'will_paginate'

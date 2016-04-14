@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+count = 100
+count.times do |i|
+	puts "Generating Story #{i}/#{count}"
+	story = Story.new
+	story.name = Faker::Hipster.sentence
+	story.content = Faker::Hipster.paragraphs.join('<br/>')
+	story.tag_list = Faker::Hipster.words(8)
+	story.save
+end

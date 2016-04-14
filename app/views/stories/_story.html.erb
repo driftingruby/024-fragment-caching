@@ -1,0 +1,18 @@
+<% cache story do %>
+  <li class='list-group-item'>
+    <h5><%= story.name %></h5>
+    <p><%=h raw story.content %></p>
+    <div class='row'>
+      <div class='col-xs-8'>
+        <% story.tag_list.each do |tag| %>
+          <%= content_tag :span, tag, class: 'label label-primary' %>
+        <% end %>
+        <%= link_to 'Edit', edit_story_path(story), class: 'label label-info' %>
+      </div>
+      <div class='col-xs-4'>
+        <div class='pull-right'><em>created <%= time_ago_in_words story.created_at %></em></div>
+      </div>
+    </div>
+  </li>
+  <% sleep 0.1 # Crazy Long Running Process %>
+<% end %>
